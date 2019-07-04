@@ -160,21 +160,17 @@ test = test.drop(features_drop, axis=1)
 train = train.drop(['PassengerId', 'AgeBand', 'FareBand'], axis=1)
 
 
-# print (train[['IsAlone', 'Survived']].groupby(['IsAlone'], as_index=False).mean())
-
-# print (train[['FamilySize', 'Survived']].groupby(['FamilySize'], as_index=False).mean())
-
 #!-----------------------------------------------------------------------------------------------
 
 X_train = train.drop('Survived', axis=1)
 y_train = train['Survived']
 X_test = test.drop("PassengerId", axis=1).copy()
 
-clf = DecisionTreeClassifier
+clf = RandomForestClassifier
 clf.fit(X_train, y_train)
 y_pred_random_forest = clf.predict(X_test)
-acc_random_forest = round(clf.score(X_train, y_train) * 100, 2)
-print (acc_random_forest)
+
+
 
 #!------------------------------------------------------------------------------------------------
 
@@ -184,6 +180,3 @@ submission = pd.DataFrame({
     })
 
 submission.to_csv('submission.csv', index=False)
-
-# a =  np.genfromtxt(train)
-# print()

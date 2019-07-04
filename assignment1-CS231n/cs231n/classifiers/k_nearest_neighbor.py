@@ -67,8 +67,8 @@ class KNearestNeighbor(object):
         num_test = X.shape[0]
         num_train = self.X_train.shape[0]
         dists = np.zeros((num_test, num_train))
-        for i in range(num_test):
-            for j in range(num_train):
+        for i in xrange(num_test):
+            for j in xrange(num_train):
                 #####################################################################
                 # TODO:                                                             #
                 # Compute the l2 distance between the ith test point and the jth    #
@@ -79,11 +79,7 @@ class KNearestNeighbor(object):
                 
                 dists[i,j] = np.linalg.norm(self.X_train[j] - X[i])
 
-
-
-
-
-                pass
+              
 
                 # *****END OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
         return dists
