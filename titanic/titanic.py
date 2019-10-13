@@ -65,8 +65,8 @@ for dataset in train_test_data:
 
 pd.crosstab(train['Title'], train['Sex'])
 
-#!------------------------------------------------------------------------------------------
-# sns.factorplot('Sex', 'Survived', hue='Pclass', size=4, aspect=2, data=train)
+!------------------------------------------------------------------------------------------
+sns.factorplot('Sex', 'Survived', hue='Pclass', size=4, aspect=2, data=train)
 
 
 for dataset in train_test_data:
